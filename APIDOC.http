@@ -1,0 +1,77 @@
+#api call for register a user
+###
+POST http://127.0.0.1:8000/api/accounts/register/
+Content-Type: application/json
+
+{
+    "username":"sanju",
+    "email":"sanju1@gmail.com",
+    "password":"sanju@123",
+    "phone":809396922
+}
+
+#api call for token
+###
+POST http://127.0.0.1:8000/api/accounts/login/
+Content-Type: application/json
+
+{
+    "username":"sanju",
+    "password":"sanju@123"
+}
+
+#api call for retrieve logged-in user profile
+###
+GET http://127.0.0.1:8000/api/accounts/profile/
+Accept: application/json
+Authorization: Token 73960eba92903c6d3e4e0277584f62fc06d08325
+
+
+#api call for listing the leads
+###
+GET http://127.0.0.1:8000/api/leads/
+Accept: application/json
+Authorization: Token ea58dfa3531d1fab92b3d3c587b1a5ca8c6a8e76
+
+#api call for creating leads
+###
+POST http://127.0.0.1:8000/api/leads/
+Content-Type: application/json
+Authorization: Token 73960eba92903c6d3e4e0277584f62fc06d08325
+
+{
+    "name": "sanjana",
+    "email": "sanjana1@gmail.com",
+    "phone": "9188396922",
+    "company_name":"Info-park",
+    "source": "website",
+    "status": "new"
+}
+
+#api call for retrieve the leads
+###
+GET http://127.0.0.1:8000/api/leads/1/
+Accept: application/json
+Authorization: Token 73960eba92903c6d3e4e0277584f62fc06d08325
+
+
+api call for update leads
+###
+PUT http://127.0.0.1:8000/api/leads/1/
+Content-Type: application/json
+Authorization: Token ea58dfa3531d1fab92b3d3c587b1a5ca8c6a8e76
+
+{
+    "name": "akash",
+    "email": "akash1@gmail.com",
+    "phone": "8590610678",
+    "company_name": "Info-park",
+    "source": "website",
+    "status": "contacted"
+}
+
+#api call for delete leads
+###
+DELETE http://127.0.0.1:8000/api/leads/2/
+Accept: application/json
+Authorization: Token ea58dfa3531d1fab92b3d3c587b1a5ca8c6a8e76
